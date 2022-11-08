@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
-    const handleLogin = event => {
+const SignUp = () => {
+    const handleSignUp = event => {
         event.preventDefault()
     }
     return (
@@ -13,8 +13,14 @@ const Login = () => {
                     <img className='w-3/4 ml-20' src="https://i.ibb.co/wrdH8TZ/flat-laptop-computer-with-people-padlock-password-security-access-verification-code-notification-con.webp" alt="" />
                 </div>
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100 ml-16 py-20 ">
-                    <h1 className='text-5xl font-bold text-center'>Login now</h1>
-                    <form onSubmit={handleLogin} className="card-body">
+                    <h1 className='text-5xl font-bold text-center'>Sign Up</h1>
+                    <form onSubmit={handleSignUp} className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -26,19 +32,16 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                            <label className="label">
-                                <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
                     </form>
-                    <p className='text-center'>New to consult here<Link className='text-orange-600 font-bold' to='/signup'>Signup</Link></p>
+                    <p className='text-center'>Already have an account?<Link className='text-orange-600 font-bold' to='/login'>Signup</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
