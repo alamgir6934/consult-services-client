@@ -21,7 +21,8 @@ const Enrolled = () => {
             customer: name,
             email,
             phone,
-            customerReview
+            customerReview,
+            img
         }
 
         fetch('http://localhost:5000/reviews', {

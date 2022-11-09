@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const menuItem = <>
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch();
+    }
+
+    const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
-        <li className='font-semibold'><Link to='/login'>Login</Link></li>
+        {
+            user?.email ?
+                <>
+                    <li className='font-semibold'><Link to='/review'>Review</Link></li>
+                    <li className='font-semibold'>
+                        <button onClick={handleLogOut} className='btn-ghost'>Sign Out</button>
+                    </li>
+                </>
+                :
+                <li className='font-semibold'><Link to='/login'>Login</Link></li>
+
+        }
+
 
     </>
     return (
@@ -17,7 +37,7 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        {menuItem}
+                        {menuItems}
                     </ul>
                 </div>
                 <Link className=" h-24 w-24 mb-10"><img src="https://i.ibb.co/bLD6kyj/coloured-logo-template-1156-108.webp" alt="" /></Link>
@@ -25,11 +45,11 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
 
-                    {menuItem}
+                    {menuItems}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <Link className="btn">Get started</Link>
             </div>
         </div>
 
