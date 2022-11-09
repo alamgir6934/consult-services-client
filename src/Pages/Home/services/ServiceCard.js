@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
 
-    const { img, title, price, details } = service;
+    const { _id, img, title, price, details } = service;
     // const [open, setOpen] = useState(false);
 
     return (
@@ -29,7 +29,9 @@ const ServiceCard = ({ service }) => {
 
                     <p>price:${price}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">details</button>
+                        <Link to={`/enroll/${_id}`}>
+                            <button className="btn btn-primary">details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
