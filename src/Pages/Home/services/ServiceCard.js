@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
 
-    const { img, title, price } = service;
+    const { img, title, price, details } = service;
     // const [open, setOpen] = useState(false);
 
     return (
@@ -20,9 +20,16 @@ const ServiceCard = ({ service }) => {
 
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{title}</h2>
-                    <p>{price}</p>
+                    {
+                        details?.length > 100 ?
+                            <>{details.slice(0, 100) + '...'} <Link>Read more</Link> </>
+                            :
+                            <>{details}</>
+                    }
+
+                    <p>price:${price}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn btn-primary">details</button>
                     </div>
                 </div>
             </div>
@@ -32,4 +39,6 @@ const ServiceCard = ({ service }) => {
 };
 
 export default ServiceCard;
-{/* <img src={img} alt="service" className="rounded-full" /> */ }
+
+
+// to={`/news/${_id}`}

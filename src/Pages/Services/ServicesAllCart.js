@@ -37,3 +37,16 @@ const ServicesAllCart = () => {
 };
 
 export default ServicesAllCart;
+
+
+
+
+
+// <Card.Text>
+// {
+//     details.length > 200 ?
+//         <>{details.slice(0, 250) + '...'} <Link to={`/news/${_id}`}>Read more</Link> </>
+//         :
+//         <>{details}</>
+// }
+// </Card.Text>

@@ -1,4 +1,5 @@
 import Main from "../../Layouts/Main";
+import Enrolled from "../../Pages/Enrolled/Enrolled";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ServicesAllCart from "../../Pages/Services/ServicesAllCart";
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
             {
                 path: '/service',
                 element: <ServicesAllCart></ServicesAllCart>,
-            }
+            },
+            {
+                path: '/enroll/:id',
+                element: <Enrolled></Enrolled>
+            },
         ]
     }
 
