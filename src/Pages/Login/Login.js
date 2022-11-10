@@ -1,9 +1,12 @@
+import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGoogle } from 'react-icons/fa';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleSignIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -47,6 +50,16 @@ const Login = () => {
             })
             .catch(error => console.log(error))
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+
+            })
+            .catch(error => console.error(error))
+    }
     return (
         <div className="hero">
             <img className='w-full' src="https://i.ibb.co/0D37Qfr/gradient-luxury-background-23-2148999255.webp" alt="" />
@@ -76,6 +89,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
+                    <button onClick={handleGoogleSignIn} className="btn btn-wide d-flex ml-16"> <FaGoogle></FaGoogle>...... Log in with google</button>
                     <p className='text-center'>New to consult here<Link className='text-orange-600 font-bold' to='/signup'>Signup</Link></p>
                 </div>
             </div>
