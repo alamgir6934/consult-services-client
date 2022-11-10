@@ -11,7 +11,7 @@ const Services = () => {
 
     }, [])
     return (
-        <div className='ml-24 mt-10'>
+        <div className='ml-10 mt-10'>
             <div className='text-center'>
                 <p className='text-2xl font-bold text-orange-600'>Our focuse Services</p>
                 <h2 className='text-3xl font-semibold'>Start Your Overseas Education Journey with Global Assistant!</h2>
