@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext);
-    // const location = useLocation();
-    // const navigate = useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    // const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault()
@@ -21,27 +21,27 @@ const Login = () => {
                 console.log(user)
 
 
-                // const currentUser = {
-                //     email: user.email
-                // }
-                // console.log(currentUser);
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser);
 
                 // //get jwt token
-                // fetch('https://genius-car-server-drab-five.vercel.app/jwt', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(currentUser)
-                // })
-                //     .then(res => res.json())
-                //     .then(data => {
-                //         console.log(data);
-                //         //local storage is not best placce for jwt token
-                //         localStorage.setItem('genius-token', data.token);
-                //         navigate(from, { replace: true });
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
 
-                //     })
+                        localStorage.setItem('consult-token', data.token);
+                        navigate(from, { replace: true });
+
+                    })
 
 
             })

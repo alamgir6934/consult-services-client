@@ -3,35 +3,34 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import ReviewDetails from './ReviewDetails';
 
 const Reviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([])
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            // , {
-            //     headers: {
-            //         authorization: `Bearer ${localStorage.getItem('genius-token')}`
-            //     }
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`
+            , {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('consult-token')}`
+                }
 
-            // })
-            .then(res => res.json())
-            .then(data => setReviews(data))
-
-        // .then(res => {
-
-        //     if (res.status === 401 || res.status === 403) {
-        //         logOut()
-        //     }
-        //     return res.json()
+            })
 
 
-        // })
-        // .then(data => {
-        //     // console.log('inside received', data)
-        //     setReviews(data)
+            .then(res => {
 
-        // })
+                if (res.status === 401 || res.status === 403) {
+                    logOut()
+                }
+                return res.json()
+
+
+            })
+            .then(data => {
+                console.log('inside received', data)
+                setReviews(data)
+
+            })
 
     }, [user?.email, reviews])
 

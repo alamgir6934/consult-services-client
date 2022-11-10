@@ -1,4 +1,5 @@
 import Main from "../../Layouts/Main";
+import Blogs from "../../Pages/Blog/Blogs";
 import Enrolled from "../../Pages/Enrolled/Enrolled";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Enrolled></Enrolled></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
+            {
+                path: '/blog',
+                element: <Blogs></Blogs>
+            }
         ]
     }
 
