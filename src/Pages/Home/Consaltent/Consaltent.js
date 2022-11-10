@@ -2,7 +2,7 @@ import React from 'react';
 
 const Consaltent = () => {
     return (
-        <div className='mt-32'>
+        <div className='mt-32 w-full'>
 
             <div className='text-center'>
                 <h1 className='lg:text-3xl font-bold text-lg'>Our Consaltent</h1>

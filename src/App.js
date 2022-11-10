@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div data-theme="garden" className='max-w-screen-xl mx-auto'>
+    <div data-theme="garden" className=''>
 
       <RouterProvider router={router}></RouterProvider>
 

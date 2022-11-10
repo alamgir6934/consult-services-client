@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
+        <div className='w-full'>
 
             <div className="hero">
                 <h1 className='text-center mb-96 lg:text-3xl'>Student Care Unit</h1>
@@ -21,7 +21,7 @@ const About = () => {
                             <img alt='' src="https://i.ibb.co/PmRtQWy/man-holding-bunch-books-donate-them-23-2148687346.webp" />
                         </div>
                     </div>
-                    <div className='w-1/2 ml-24'>
+                    <div className=''>
                         <h1 className="lg:text-4xl text-lg font-bold">Our Approach</h1>
                         <p className="py-6">Each institution we work with unique.Depending on your goals,we can offer you one distinct service or design a <br />
                             custom bundle of serrvices. We tailor the approach or mix of approaches best suited to your university</p>
