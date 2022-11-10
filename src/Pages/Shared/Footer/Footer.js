@@ -7,7 +7,7 @@ const Footer = () => {
                 <div>
                     <img className='h-32 w-32 mb-0 pb-0' src="https://i.ibb.co/bLD6kyj/coloured-logo-template-1156-108.webp" alt="" />
                     <p className="font-bold">
-                        ACME Industries Ltd. <br />Providing reliable tech since 1992
+                        ConnectLife consult Ltd. <br />Providing reliable tech since 1992
                     </p>
                     <p>Copyright © 2022 - All right reserved</p>
                 </div>
