@@ -17,7 +17,7 @@ const ServicesAllCart = () => {
                 <h2 className='lg:text-4xl font-semibold'>Start Your Overseas Education Journey with Global Assistant!</h2>
                 <p>Thinking of starting a consulting job? There are countless types of consulting roles in dozens of different industries which, with the right experience, you could offer your expertise to!</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ml-24'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {
                     services.map(service => <ServiceCard
 

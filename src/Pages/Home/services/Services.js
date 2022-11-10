@@ -28,7 +28,7 @@ const Services = () => {
 
             </div>
 
-            <div className='w-52 h-20 lg:mx-auto ml-40'>
+            <div className='h-20 mx-auto'>
                 <button class="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded"><Link to='./service'>See All</Link></button>
             </div>
 
