@@ -11,10 +11,10 @@ const Services = () => {
 
     }, [])
     return (
-        <>
+        <div className='ml-24 mt-10'>
             <div className='text-center'>
                 <p className='text-2xl font-bold text-orange-600'>Our focuse Services</p>
-                <h2 className='text-5xl font-semibold'>Start Your Overseas Education Journey with Global Assistant!</h2>
+                <h2 className='text-3xl font-semibold'>Start Your Overseas Education Journey with Global Assistant!</h2>
                 <p>Thinking of starting a consulting job? There are countless types of consulting roles in dozens of different industries which, with the right experience, you could offer your expertise to!</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -28,12 +28,12 @@ const Services = () => {
 
             </div>
 
-            <div className='w-52 h-20 mx-auto'>
+            <div className='w-52 h-20 lg:mx-auto ml-40'>
                 <button class="bg-purple-900 text-white hover:bg-blue-400 font-bold py-2 px-4 mt-3 rounded"><Link to='./service'>See All</Link></button>
             </div>
 
 
-        </>
+        </div>
     );
 };
 

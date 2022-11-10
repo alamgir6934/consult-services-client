@@ -5,7 +5,7 @@ const Consaltent = () => {
         <div className='mt-32'>
 
             <div className='text-center'>
-                <h1>Our Consaltent</h1>
+                <h1 className='lg:text-3xl font-bold text-lg'>Our Consaltent</h1>
                 <p>who always care our student</p>
             </div>
             <div className="card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
