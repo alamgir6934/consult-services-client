@@ -50,9 +50,9 @@ const Header = () => {
                     {menuItems}
                 </ul>
             </div>
-            <div className="navbar-end">
+            {/* <div className="navbar-end">
                 <Link className="btn">Get started</Link>
-            </div>
+            </div> */}
         </div>
 
     );

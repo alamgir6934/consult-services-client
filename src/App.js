@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div data-theme="garden" className=''>
+    <div data-theme="garden" className='overflow-x-hidden'>
 
       <RouterProvider router={router}></RouterProvider>
 
